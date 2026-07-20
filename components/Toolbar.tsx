@@ -1,12 +1,14 @@
 type ToolbarProps = {
   onRemoveEmptyRows: () => void;
   onRemoveDuplicates: () => void;
+  onRemoveEmptyColumns: () => void;
   onDownload: () => void;
 };
 
 export default function Toolbar({
   onRemoveEmptyRows,
   onRemoveDuplicates,
+  onRemoveEmptyColumns,
   onDownload,
 }: ToolbarProps) {
   return (
@@ -29,6 +31,13 @@ export default function Toolbar({
           className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg transition"
         >
           📄 Remove Duplicates
+        </button>
+
+        <button
+          onClick={onRemoveEmptyColumns}
+          className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-lg transition"
+        >
+          📊 Remove Empty Columns
         </button>
 
         <button

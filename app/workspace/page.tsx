@@ -61,10 +61,35 @@ export default function Workspace() {
     setExcelData(uniqueRows);
   };
 
+  const removeEmptyColumns = () => {
+    if (excelData.length === 0) return;
+
+    const keys = Object.keys(excelData[0]);
+
+    const columnsToKeep = keys.filter((key) =>
+      excelData.some(
+        (row) => String(row[key] ?? "").trim() !== ""
+      )
+    );
+
+    const cleanedData = excelData.map((row) => {
+      const newRow: any = {};
+
+      columnsToKeep.forEach((key) => {
+        newRow[key] = row[key];
+      });
+
+      return newRow;
+    });
+
+    setExcelData(cleanedData);
+  };
+
   const downloadExcel = () => {
     if (excelData.length === 0) return;
 
     const worksheet = XLSX.utils.json_to_sheet(excelData);
+
     const workbook = XLSX.utils.book_new();
 
     XLSX.utils.book_append_sheet(
@@ -108,6 +133,7 @@ export default function Workspace() {
           <Toolbar
             onRemoveEmptyRows={removeEmptyRows}
             onRemoveDuplicates={removeDuplicates}
+            onRemoveEmptyColumns={removeEmptyColumns}
             onDownload={downloadExcel}
           />
         )}
