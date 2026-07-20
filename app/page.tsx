@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import * as XLSX from "xlsx";
-import ExcelPreview from "./components/ExcelPreview";
+import ExcelPreview from "../components/ExcelPreview";
 
 export default function Home() {
   const fileInputRef = useRef<HTMLInputElement>(null);
