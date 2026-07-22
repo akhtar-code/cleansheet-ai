@@ -2,6 +2,7 @@ type ToolbarProps = {
   onRemoveEmptyRows: () => void;
   onRemoveDuplicates: () => void;
   onRemoveEmptyColumns: () => void;
+  onTrimSpaces: () => void;
   onDownload: () => void;
 };
 
@@ -9,45 +10,76 @@ export default function Toolbar({
   onRemoveEmptyRows,
   onRemoveDuplicates,
   onRemoveEmptyColumns,
+  onTrimSpaces,
   onDownload,
 }: ToolbarProps) {
   return (
-    <div className="mt-8 bg-white rounded-2xl shadow-md p-6">
-      <h2 className="text-xl font-bold mb-4">
-        Cleaning Tools
-      </h2>
+    <div className="mt-10 rounded-3xl bg-white p-8 shadow-lg border border-gray-200">
 
-      <div className="flex flex-wrap gap-4">
+      <div className="mb-6">
+        <h2 className="text-2xl font-bold">
+          Cleaning Actions
+        </h2>
+
+        <p className="text-gray-500 mt-1">
+          Clean and transform your spreadsheet with one click.
+        </p>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
 
         <button
           onClick={onRemoveEmptyRows}
-          className="bg-red-500 hover:bg-red-600 text-white px-5 py-3 rounded-lg transition"
+          className="rounded-2xl bg-red-500 p-5 text-white hover:bg-red-600 transition"
         >
-          🧹 Remove Empty Rows
+          🧹
+          <div className="mt-2 font-bold">
+            Empty Rows
+          </div>
         </button>
 
         <button
           onClick={onRemoveDuplicates}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg transition"
+          className="rounded-2xl bg-blue-600 p-5 text-white hover:bg-blue-700 transition"
         >
-          📄 Remove Duplicates
+          📄
+          <div className="mt-2 font-bold">
+            Duplicates
+          </div>
         </button>
 
         <button
           onClick={onRemoveEmptyColumns}
-          className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-lg transition"
+          className="rounded-2xl bg-orange-500 p-5 text-white hover:bg-orange-600 transition"
         >
-          📊 Remove Empty Columns
+          📊
+          <div className="mt-2 font-bold">
+            Empty Columns
+          </div>
+        </button>
+
+        <button
+          onClick={onTrimSpaces}
+          className="rounded-2xl bg-purple-600 p-5 text-white hover:bg-purple-700 transition"
+        >
+          ✂️
+          <div className="mt-2 font-bold">
+            Trim Spaces
+          </div>
         </button>
 
         <button
           onClick={onDownload}
-          className="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg transition"
+          className="rounded-2xl bg-green-600 p-5 text-white hover:bg-green-700 transition"
         >
-          ⬇ Download Clean Excel
+          ⬇
+          <div className="mt-2 font-bold">
+            Download
+          </div>
         </button>
 
       </div>
+
     </div>
   );
 }
