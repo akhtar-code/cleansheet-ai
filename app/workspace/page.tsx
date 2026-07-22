@@ -58,7 +58,9 @@ export default function Workspace() {
         }
       );
 
-    console.log(jsonData);
+    console.log(
+  JSON.stringify(jsonData, null, 2)
+);
 
     setExcelData(jsonData);
   };  const removeEmptyRows = () => {
