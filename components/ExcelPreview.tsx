@@ -49,39 +49,40 @@ export default function ExcelPreview({
 
           <tbody>
 
-            {data.map((row, rowIndex) => (
-              <tr
-                key={rowIndex}
-                className={
-                  rowIndex % 2 === 0
-                    ? "bg-white hover:bg-blue-50"
-                    : "bg-gray-50 hover:bg-blue-50"
-                }
-              >
+  {data.map((row, rowIndex) => (
+    <tr
+      key={rowIndex}
+      className={
+        rowIndex % 2 === 0
+          ? "bg-white hover:bg-blue-50"
+          : "bg-gray-50 hover:bg-blue-50"
+      }
+    >
 
-                <td className="border border-gray-200 px-4 py-3 text-center font-semibold text-gray-500">
-                  {rowIndex + 1}
-                </td>
+      <td className="border border-gray-200 px-4 py-3 text-center font-semibold text-gray-500">
+        {rowIndex + 1}
+      </td>
 
-                {columns.map((column) => (
-                  <td
-                    key={column}
-                    className="border border-gray-200 px-5 py-3 whitespace-nowrap"
-                  >
-                    {String(row[column] ?? "")}
-                  </td>
-                ))}
+      {columns.map((column) => (
+        <td
+          key={column}
+          className="border border-gray-200 px-5 py-3 font-mono"
+          style={{
+            whiteSpace: "pre",
+          }}
+        >
+          {String(row[column] ?? "")}
+        </td>
+      ))}
 
-              </tr>
-            ))}
+    </tr>
+  ))}
 
-          </tbody>
+</tbody>
 
         </table>
 
-      </div>
-
-      <div className="border-t bg-gray-50 px-6 py-4 flex justify-between text-sm text-gray-600">
+      </div>      <div className="border-t bg-gray-50 px-6 py-4 flex justify-between text-sm text-gray-600">
 
         <span>
           Rows: <strong>{data.length}</strong>
@@ -93,6 +94,5 @@ export default function ExcelPreview({
 
       </div>
 
-    </div>
-  );
+    </div>  );
 }
