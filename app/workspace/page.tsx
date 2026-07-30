@@ -19,8 +19,9 @@ export default function Workspace() {
 
       {excel.loading && (
         <LoadingOverlay
-          message={excel.loadingMessage}
-        />
+  loading={excel.loading}
+  message={excel.loadingMessage}
+/>
       )}
 
       <div className="mx-auto max-w-screen-xl px-6 py-12 lg:px-10">
