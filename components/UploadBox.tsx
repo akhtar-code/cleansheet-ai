@@ -34,7 +34,7 @@ export default function UploadBox({
 
         onFileDrop(file);
       }}
-      className={`rounded-3xl border-2 border-dashed p-12 shadow-sm transition-all duration-300
+      className={`rounded-3xl border-2 border-dashed p-6 sm:p-8 lg:p-12 shadow-sm transition-all duration-300
 
       ${
         dragging
@@ -45,7 +45,7 @@ export default function UploadBox({
       <div className="flex flex-col items-center text-center">
 
         <div
-          className={`mb-6 flex h-20 w-20 items-center justify-center rounded-full text-4xl transition
+          className={`mb-6 flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full text-3xl sm:text-4xl transition
 
           ${
             dragging
@@ -56,11 +56,11 @@ export default function UploadBox({
           📁
         </div>
 
-        <h2 className="text-3xl font-bold text-gray-900">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
           Upload Excel File
         </h2>
 
-        <p className="mt-3 max-w-xl text-gray-500">
+        <p className="mt-3 max-w-xl text-sm sm:text-base leading-7 text-gray-500">
           Drag & Drop your Excel or CSV
           file here, or click the button
           below to browse your computer.
@@ -68,12 +68,12 @@ export default function UploadBox({
 
         <button
           onClick={onUpload}
-          className="mt-8 rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white shadow-md transition hover:bg-blue-700 hover:shadow-lg"
+          className="mt-8 w-full sm:w-auto rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white shadow-md transition hover:bg-blue-700 hover:shadow-lg active:scale-95"
         >
           Choose Excel File
         </button>
 
-        <p className="mt-6 text-sm text-gray-400">
+        <p className="mt-6 text-xs sm:text-sm text-gray-400">
           Supported formats:
           .xlsx • .xls • .csv
         </p>
