@@ -9,9 +9,9 @@ export default function Home() {
       <Navbar />
 
       {/* Hero */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-10 py-24">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-16 sm:py-20 lg:py-24">
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* Left Side */}
           <div>
@@ -20,20 +20,20 @@ export default function Home() {
               🚀 Free Excel Cleaning Tool
             </span>
 
-            <h1 className="mt-8 text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+            <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight text-center lg:text-left">
               Clean Your Excel Files
               <span className="block text-blue-600">
                 In Seconds
               </span>
             </h1>
 
-            <p className="mt-8 text-xl leading-9 text-slate-600">
+            <p className="mt-6 text-base sm:text-lg lg:text-xl leading-7 lg:leading-9 text-slate-600 text-center lg:text-left">
               Remove empty rows, duplicate records,
               blank columns and messy data with one click.
               No installation. No signup.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
 
               <a
                 href="/workspace"
@@ -54,7 +54,7 @@ export default function Home() {
           </div>          {/* Right Side */}
           <div>
 
-            <div className="rounded-3xl bg-white border border-slate-200 shadow-2xl p-8">
+            <div className="rounded-3xl bg-white border border-slate-200 shadow-2xl p-5 sm:p-8">
 
               <div className="flex items-center justify-between">
 
@@ -68,13 +68,13 @@ export default function Home() {
 
               </div>
 
-              <div className="mt-8 rounded-2xl border-2 border-dashed border-blue-300 bg-slate-50 p-12 text-center">
+              <div className="mt-8 rounded-2xl border-2 border-dashed border-blue-300 bg-slate-50 p-6 sm:p-10 lg:p-12 text-center">
 
                 <div className="text-6xl">
                   📄
                 </div>
 
-                <h3 className="mt-6 text-2xl font-bold">
+                <h3 className="mt-6 text-xl sm:text-2xl font-bold">
                   Upload Excel File
                 </h3>
 
@@ -91,7 +91,7 @@ export default function Home() {
 
               </div>
 
-              <div className="mt-8 grid grid-cols-2 gap-4">
+              <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4">
 
                 <div className="rounded-xl bg-slate-100 p-4">
                   <p className="text-3xl font-bold text-blue-600">

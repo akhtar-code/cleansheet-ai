@@ -57,24 +57,24 @@ export default function Toolbar({
   onDownload,
 }: ToolbarProps) {
   return (
-    <div className="mt-10 rounded-3xl border border-gray-200 bg-white p-8 shadow-lg">
+    <div className="mt-8 rounded-3xl border border-gray-200 bg-white p-5 sm:p-8 shadow-lg">
 
       <div className="mb-6">
-        <h2 className="text-2xl font-bold">
+        <h2 className="text-xl sm:text-2xl font-bold">
           Cleaning Actions
         </h2>
 
-        <p className="mt-1 text-gray-500">
+        <p className="mt-2 text-sm sm:text-base text-gray-500">
           Clean and transform your spreadsheet with one click.
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">        <button
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">        <button
           onClick={onRemoveEmptyRows}
-          className="w-full rounded-2xl bg-red-500 p-5 text-white hover:bg-red-600 transition"
+          className="w-full rounded-2xl bg-red-500 p-4 sm:p-5 text-white hover:bg-red-600 transition active:scale-95"
         >
-          <div className="text-3xl mb-2">🧹</div>
-          <div className="font-bold">Empty Rows</div>
+          <div className="text-2xl sm:text-3xl mb-2">🧹</div>
+          <div className="text-sm sm:text-base font-bold">Empty Rows</div>
         </button>
 
         <button
