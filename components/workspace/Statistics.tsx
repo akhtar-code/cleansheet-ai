@@ -16,38 +16,42 @@ export default function Statistics({
   emptyColumnsRemoved,
 }: StatisticsProps) {
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-5 gap-5 mt-8">
+    <section className="mt-8">
 
-      <StatCard
-        title="Rows"
-        value={totalRows}
-        color="text-blue-600"
-      />
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-5">
 
-      <StatCard
-        title="Columns"
-        value={totalColumns}
-        color="text-indigo-600"
-      />
+        <StatCard
+          title="Rows"
+          value={totalRows}
+          color="text-blue-600"
+        />
 
-      <StatCard
-        title="Duplicates Removed"
-        value={duplicatesRemoved}
-        color="text-green-600"
-      />
+        <StatCard
+          title="Columns"
+          value={totalColumns}
+          color="text-indigo-600"
+        />
 
-      <StatCard
-        title="Empty Rows Removed"
-        value={emptyRowsRemoved}
-        color="text-red-500"
-      />
+        <StatCard
+          title="Duplicates"
+          value={duplicatesRemoved}
+          color="text-green-600"
+        />
 
-      <StatCard
-        title="Empty Columns Removed"
-        value={emptyColumnsRemoved}
-        color="text-orange-500"
-      />
+        <StatCard
+          title="Empty Rows"
+          value={emptyRowsRemoved}
+          color="text-red-500"
+        />
 
-    </div>
+        <StatCard
+          title="Empty Columns"
+          value={emptyColumnsRemoved}
+          color="text-orange-500"
+        />
+
+      </div>
+
+    </section>
   );
 }
