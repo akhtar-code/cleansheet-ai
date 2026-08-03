@@ -62,34 +62,78 @@ export function useExcel() {
   };
 
   const handleProcessFile = async (
-    file: File
-  ) => {
-    try {
-      setLoading(true);
-      setLoadingMessage(
-        "Reading spreadsheet..."
-      );
+  file: File
+) => {
+  try {
+    setError("");
 
-      setError("");
+    // Maximum file size (10 MB)
+    const MAX_FILE_SIZE = 10 * 1024 * 1024;
 
-      const data =
-        await processFile(file);
-
-      setFileName(file.name);
-
-      setDuplicatesRemoved(0);
-      setEmptyRowsRemoved(0);
-      setEmptyColumnsRemoved(0);
-
-      setExcelData(data);
-    } catch {
-      setError(
-        "Unable to read spreadsheet."
-      );
-    } finally {
-      setLoading(false);
+    if (file.size === 0) {
+      setError("The selected file is empty.");
+      return;
     }
-  };
+
+    if (file.size > MAX_FILE_SIZE) {
+      setError(
+        "File size exceeds 10 MB. Please upload a smaller spreadsheet."
+      );
+      return;
+    }
+
+    // Validate extension
+    const allowedExtensions = [
+      ".xlsx",
+      ".xls",
+      ".csv",
+    ];
+
+    const fileNameLower =
+      file.name.toLowerCase();
+
+    const isSupported =
+      allowedExtensions.some((extension) =>
+        fileNameLower.endsWith(extension)
+      );
+
+    if (!isSupported) {
+      setError(
+        "Unsupported file format. Please upload an Excel (.xlsx, .xls) or CSV file."
+      );
+      return;
+    }
+
+    setLoading(true);
+    setLoadingMessage(
+      "Reading spreadsheet..."
+    );
+
+    const data =
+      await processFile(file);
+
+    if (!data || data.length === 0) {
+      setError(
+        "The uploaded spreadsheet contains no usable data."
+      );
+      return;
+    }
+
+    setFileName(file.name);
+
+    setDuplicatesRemoved(0);
+    setEmptyRowsRemoved(0);
+    setEmptyColumnsRemoved(0);
+
+    setExcelData(data);
+  } catch {
+    setError(
+      "Unable to read spreadsheet. Please check the file and try again."
+    );
+  } finally {
+    setLoading(false);
+  }
+};
 
   const handleFileSelect = async (
     event: React.ChangeEvent<HTMLInputElement>
