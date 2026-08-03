@@ -5,11 +5,13 @@ import { useState } from "react";
 type UploadBoxProps = {
   onUpload: () => void;
   onFileDrop: (file: File) => void;
+  loading: boolean;
 };
 
 export default function UploadBox({
   onUpload,
   onFileDrop,
+  loading,
 }: UploadBoxProps) {
   const [dragging, setDragging] =
     useState(false);
@@ -17,30 +19,38 @@ export default function UploadBox({
   return (
     <div
       onDragOver={(e) => {
-        e.preventDefault();
-        setDragging(true);
-      }}
+  e.preventDefault();
+
+  if (loading) return;
+
+  setDragging(true);
+}}
       onDragLeave={() => {
         setDragging(false);
       }}
       onDrop={(e) => {
-        e.preventDefault();
-        setDragging(false);
+  e.preventDefault();
 
-        const file =
-          e.dataTransfer.files[0];
+  if (loading) return;
 
-        if (!file) return;
+  setDragging(false);
 
-        onFileDrop(file);
-      }}
+  const file =
+    e.dataTransfer.files[0];
+
+  if (!file) return;
+
+  onFileDrop(file);
+}}
       className={`rounded-3xl border-2 border-dashed p-6 sm:p-8 lg:p-12 shadow-sm transition-all duration-300
 
       ${
-        dragging
-          ? "border-blue-600 bg-blue-100 scale-[1.02]"
-          : "border-blue-300 bg-gradient-to-br from-white to-blue-50 hover:shadow-xl"
-      }`}
+  loading
+    ? "border-gray-300 bg-gray-100 opacity-70"
+    : dragging
+      ? "border-blue-600 bg-blue-100 scale-[1.02]"
+      : "border-blue-300 bg-gradient-to-br from-white to-blue-50 hover:shadow-xl"
+}`}
     >
       <div className="flex flex-col items-center text-center">
 
@@ -67,11 +77,17 @@ export default function UploadBox({
         </p>
 
         <button
-          onClick={onUpload}
-          className="mt-8 w-full sm:w-auto rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white shadow-md transition hover:bg-blue-700 hover:shadow-lg active:scale-95"
-        >
-          Choose Excel File
-        </button>
+  disabled={loading}
+  onClick={onUpload}
+  className={`mt-8 rounded-xl px-8 py-4 font-semibold text-white shadow-md transition
+    ${
+      loading
+        ? "cursor-not-allowed bg-gray-400"
+        : "bg-blue-600 hover:bg-blue-700 hover:shadow-lg"
+    }`}
+>
+  {loading ? "Processing..." : "Choose Excel File"}
+</button>
 
         <p className="mt-6 text-xs sm:text-sm text-gray-400">
           Supported formats:
