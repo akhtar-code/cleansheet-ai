@@ -100,6 +100,38 @@ utils/
 types/
 public/
 ```
+## Architecture
+
+```text
+User
+   │
+   ▼
+UploadBox
+   │
+   ▼
+processFile()
+   │
+   ▼
+Excel Data
+   │
+   ▼
+Cleaning Utilities
+   │
+   ├── removeEmptyRows
+   ├── removeDuplicates
+   ├── removeEmptyColumns
+   ├── trimSpaces
+   ├── sortData
+   ├── splitColumn
+   ├── mergeColumns
+   └── autoClean
+   │
+   ▼
+ExcelPreview
+   │
+   ▼
+downloadExcel()
+```
 
 ---
 
@@ -122,6 +154,25 @@ Run development server
 ```bash
 npm run dev
 ```
+## Development Workflow
+
+This project follows a feature-branch workflow.
+
+```text
+Issue
+   ↓
+Feature Branch
+   ↓
+Development
+   ↓
+Commits
+   ↓
+Pull Request
+   ↓
+Merge
+```
+
+Every new feature is developed in its own branch before being merged into the main branch.
 
 ---
 
