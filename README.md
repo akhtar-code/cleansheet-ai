@@ -1,8 +1,35 @@
 # CleanSheet AI
 
+# CleanSheet AI
+
+## Demo
+
+### Live Website
+
+Coming Soon
+
+### Screenshots
+
+Coming Soon
+
 CleanSheet AI is a modern spreadsheet cleaning application built with Next.js, React, and TypeScript.
 
 It helps users clean messy Excel files in seconds by removing duplicate records, deleting empty rows and columns, trimming whitespace, sorting data, merging and splitting columns, and exporting a cleaned spreadsheet.
+## Why CleanSheet AI?
+
+Spreadsheet cleaning is one of the most repetitive tasks for students, accountants, analysts, HR teams, and business professionals.
+
+CleanSheet AI automates common spreadsheet cleaning operations while keeping all processing inside the browser for better privacy, speed, and security.
+
+Typical use cases include:
+
+- Financial reports
+- HR employee records
+- Sales spreadsheets
+- Customer databases
+- Survey exports
+- Academic datasets
+- CSV imports
 
 ---
 
@@ -97,19 +124,34 @@ npm run dev
 
 ---
 
-## Roadmap
+## Future Features
 
-Upcoming improvements
+### Version 1.1
 
-- Large file optimization
-- Undo history
-- Dark mode
-- AI cleaning suggestions
+- Undo previous actions
 - Multiple worksheet support
-- Batch processing
+- Faster processing for large spreadsheets
+
+### Version 1.2
+
+- AI-powered cleaning suggestions
+- Formula protection
+- Data validation
+
+### Version 2.0
+
+- User accounts
+- Cloud storage
+- Team collaboration
+- AI spreadsheet assistant
 
 ---
 
 ## License
 
 MIT License
+## Contributing
+
+Contributions, suggestions, and bug reports are welcome.
+
+Please create an Issue before submitting major changes.
