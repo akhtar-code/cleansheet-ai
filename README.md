@@ -1,6 +1,11 @@
 # CleanSheet AI
+![Next.js](https://img.shields.io/badge/Next.js-16-black)
+![React](https://img.shields.io/badge/React-19-61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![Tailwind](https://img.shields.io/badge/TailwindCSS-4-38BDF8)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-# CleanSheet AI
+
 
 ## Demo
 
@@ -49,6 +54,18 @@ Typical use cases include:
 - Live spreadsheet preview
 - Mobile responsive workspace
 - Fast client-side processing
+## Features Overview
+
+| Category | Status |
+|----------|--------|
+| Spreadsheet Upload | ✅ |
+| Live Preview | ✅ |
+| Data Cleaning | ✅ |
+| Data Transformation | ✅ |
+| Excel Export | ✅ |
+| Mobile Responsive | ✅ |
+| Client-side Processing | ✅ |
+| TypeScript Architecture | ✅ |
 
 ---
 
