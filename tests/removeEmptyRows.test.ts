@@ -62,4 +62,36 @@ describe("removeEmptyRows()", () => {
       { Active: false, Name: "Ali" },
     ]);
   });
+it("removes rows containing only whitespace", () => {
+  const input = [
+    { Name: "   ", Age: "" },
+    { Name: "Ali", Age: 20 },
+  ];
+
+  expect(removeEmptyRows(input)).toEqual([
+    { Name: "Ali", Age: 20 },
+  ]);
+});
+
+it("does not modify already clean data", () => {
+  const input = [
+    { Name: "Ali", Age: 20 },
+    { Name: "Sara", Age: 22 },
+  ];
+
+  expect(removeEmptyRows(input)).toEqual(input);
+});
+
+it("supports rows with different column names", () => {
+  const input = [
+    { City: "Karachi", Population: 200 },
+    { City: "", Population: "" },
+    { City: "Lahore", Population: 300 },
+  ];
+
+  expect(removeEmptyRows(input)).toEqual([
+    { City: "Karachi", Population: 200 },
+    { City: "Lahore", Population: 300 },
+  ]);
+});
 });
