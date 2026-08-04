@@ -212,8 +212,45 @@ Every new feature is developed in its own branch before being merged into the ma
 - Cloud storage
 - Team collaboration
 - AI spreadsheet assistant
+## Known Limitations
+
+Current MVP limitations:
+
+- Processes one spreadsheet at a time
+- Client-side processing only
+- No cloud synchronization
+- No user authentication
+- No collaboration features
+- Optimized for small to medium spreadsheets
 
 ---
+## Version History
+
+### v1.1 (Current)
+
+- Responsive landing page
+- Responsive workspace
+- Upload validation
+- Excel preview
+- Remove empty rows
+- Remove duplicates
+- Remove empty columns
+- Trim spaces
+- Find & Replace
+- Sort data
+- Split columns
+- Merge columns
+- Auto Clean
+- Excel download
+- Loading overlay
+- Mobile responsive interface
+
+### Planned v1.2
+
+- Undo history
+- Large file optimization
+- Multiple worksheet support
+- Formula protection
 
 ## License
 
