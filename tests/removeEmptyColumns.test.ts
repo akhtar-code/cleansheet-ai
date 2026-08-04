@@ -66,4 +66,33 @@ describe("removeEmptyColumns()", () => {
       { Name: "Sara", Age: 22 },
     ]);
   });
+
+it("does not modify data when no empty columns exist", () => {
+  const input = [
+    { Name: "Ali", Age: 20 },
+    { Name: "Sara", Age: 22 },
+  ];
+
+  expect(removeEmptyColumns(input)).toEqual(input);
 });
+
+it("removes an empty column even when all values are whitespace", () => {
+  const input = [
+    { Name: "Ali", Notes: "   " },
+    { Name: "Sara", Notes: "   " },
+  ];
+
+  expect(removeEmptyColumns(input)).toEqual([
+    { Name: "Ali" },
+    { Name: "Sara" },
+  ]);
+});
+
+it("keeps partially filled columns", () => {
+  const input = [
+    { Name: "Ali", Notes: "" },
+    { Name: "Sara", Notes: "Present" },
+  ];
+
+  expect(removeEmptyColumns(input)).toEqual(input);
+});});

@@ -44,4 +44,38 @@ describe("removeDuplicates()", () => {
       { Name: "B", Age: 2 },
     ]);
   });
+
+it("keeps the first occurrence of duplicate rows", () => {
+  const input = [
+    { Name: "Ali", Age: 20 },
+    { Name: "Ali", Age: 20 },
+    { Name: "Ali", Age: 20 },
+  ];
+
+  expect(removeDuplicates(input)).toEqual([
+    { Name: "Ali", Age: 20 },
+  ]);
 });
+
+it("treats rows with different values as unique", () => {
+  const input = [
+    { Name: "Ali", Age: 20 },
+    { Name: "Ali", Age: 21 },
+    { Name: "Ali", Age: 22 },
+  ];
+
+  expect(removeDuplicates(input)).toEqual(input);
+});
+
+it("handles rows with different column names", () => {
+  const input = [
+    { City: "Karachi", Population: 100 },
+    { City: "Karachi", Population: 100 },
+    { City: "Lahore", Population: 200 },
+  ];
+
+  expect(removeDuplicates(input)).toEqual([
+    { City: "Karachi", Population: 100 },
+    { City: "Lahore", Population: 200 },
+  ]);
+});});

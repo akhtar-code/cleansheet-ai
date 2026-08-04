@@ -97,4 +97,41 @@ describe("sortData()", () => {
 
     expect(input).toEqual(copy);
   });
+
+it("sorts values case-insensitively", () => {
+  const input = [
+    { Name: "ali" },
+    { Name: "Bilal" },
+    { Name: "Ahmed" },
+  ];
+
+  expect(sortData(input, "Name", "asc")).toEqual([
+    { Name: "Ahmed" },
+    { Name: "ali" },
+    { Name: "Bilal" },
+  ]);
 });
+
+it("sorts empty values before text values", () => {
+  const input = [
+    { Name: "Bilal" },
+    { Name: "" },
+    { Name: "Ali" },
+  ];
+
+  expect(sortData(input, "Name", "asc")).toEqual([
+    { Name: "" },
+    { Name: "Ali" },
+    { Name: "Bilal" },
+  ]);
+});
+
+it("handles a single-row dataset", () => {
+  const input = [
+    { Name: "Ali" },
+  ];
+
+  expect(sortData(input, "Name", "asc")).toEqual([
+    { Name: "Ali" },
+  ]);
+});});

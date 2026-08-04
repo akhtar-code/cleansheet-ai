@@ -88,4 +88,47 @@ describe("trimSpaces()", () => {
       },
     ]);
   });
+
+it("trims strings containing only spaces into empty strings", () => {
+  const input = [
+    {
+      Name: "     ",
+      City: " Karachi ",
+    },
+  ];
+
+  expect(trimSpaces(input)).toEqual([
+    {
+      Name: "",
+      City: "Karachi",
+    },
+  ]);
 });
+
+it("does not modify null or undefined values", () => {
+  const input = [
+    {
+      Name: null,
+      City: undefined,
+      Age: 20,
+    },
+  ];
+
+  expect(trimSpaces(input)).toEqual(input);
+});
+
+it("trims multiple spaces but preserves spaces inside text", () => {
+  const input = [
+    {
+      Name: "  Ali Ahmed  ",
+      City: "  New York  ",
+    },
+  ];
+
+  expect(trimSpaces(input)).toEqual([
+    {
+      Name: "Ali Ahmed",
+      City: "New York",
+    },
+  ]);
+});});

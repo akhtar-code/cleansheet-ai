@@ -105,4 +105,37 @@ describe("findReplace()", () => {
       },
     ]);
   });
+
+it("replaces multiple occurrences inside the same string", () => {
+  const input = [
+    { Text: "Ali Ali Ali" },
+  ];
+
+  expect(
+    findReplace(input, "Ali", "Ahmed")
+  ).toEqual([
+    { Text: "Ahmed Ahmed Ahmed" },
+  ]);
 });
+
+it("does not modify empty strings", () => {
+  const input = [
+    { Name: "", City: "" },
+  ];
+
+  expect(
+    findReplace(input, "Ali", "Ahmed")
+  ).toEqual(input);
+});
+
+it("replaces text while preserving surrounding characters", () => {
+  const input = [
+    { Text: "Hello Ali!" },
+  ];
+
+  expect(
+    findReplace(input, "Ali", "Ahmed")
+  ).toEqual([
+    { Text: "Hello Ahmed!" },
+  ]);
+});});
