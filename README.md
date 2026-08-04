@@ -1,153 +1,115 @@
-# 🧹 CleanSheet AI
+# CleanSheet AI
 
-> Clean your Excel files in seconds — remove duplicates, empty rows, empty columns, trim spaces, merge/split columns, sort data, and download a clean spreadsheet instantly.
+CleanSheet AI is a modern spreadsheet cleaning application built with Next.js, React, and TypeScript.
 
----
-
-## ✨ Overview
-
-CleanSheet AI is a modern Excel data cleaning application built with **Next.js**, **TypeScript**, and **React**.
-
-It helps users clean messy spreadsheets without writing formulas or using complex Excel tools.
-
-The project demonstrates:
-
-- Modern React architecture
-- TypeScript development
-- File processing
-- Automated testing with Vitest
-- Continuous Integration using GitHub Actions
-- Clean component-based design
+It helps users clean messy Excel files in seconds by removing duplicate records, deleting empty rows and columns, trimming whitespace, sorting data, merging and splitting columns, and exporting a cleaned spreadsheet.
 
 ---
 
-## 🚀 Features
+## Features
 
-### Excel Processing
-
-- Upload Excel (.xlsx, .xls)
-- Preview spreadsheet
-- Download cleaned Excel
-
-### Cleaning Tools
-
-- Remove Duplicate Rows
-- Remove Empty Rows
-- Remove Empty Columns
-- Trim Extra Spaces
-- Find & Replace
-- Sort Data
-- Split Columns
-- Merge Columns
+- Upload Excel (.xlsx, .xls) and CSV files
+- Remove empty rows
+- Remove duplicate rows
+- Remove empty columns
+- Trim whitespace
+- Find and replace values
+- Sort data
+- Split columns
+- Merge columns
 - Auto Clean
+- Download cleaned Excel file
+- Live spreadsheet preview
+- Mobile responsive workspace
+- Fast client-side processing
 
-### Engineering
+---
 
+## Technology Stack
+
+### Frontend
+
+- Next.js 16
+- React 19
 - TypeScript
-- Component Architecture
-- Utility Layer
-- Unit Testing
-- GitHub Actions CI
-- Responsive UI
+- Tailwind CSS
+
+### Spreadsheet Engine
+
+- SheetJS (xlsx)
+
+### Development
+
+- Git
+- GitHub
+- Vercel
 
 ---
 
-## 🛠 Tech Stack
-
-| Technology | Usage |
-|------------|------|
-| Next.js | Frontend Framework |
-| React | UI |
-| TypeScript | Type Safety |
-| XLSX | Excel Processing |
-| Tailwind CSS | Styling |
-| Vitest | Unit Testing |
-| GitHub Actions | Continuous Integration |
-
----
-
-## 📂 Project Structure
+## Project Structure
 
 ```text
 app/
 components/
-tests/
-.github/
-public/
-```# 🧹 CleanSheet AI
-
-> Clean your Excel files in seconds — remove duplicates, empty rows, empty columns, trim spaces, merge/split columns, sort data, and download a clean spreadsheet instantly.
-
----
-
-## ✨ Overview
-
-CleanSheet AI is a modern Excel data cleaning application built with **Next.js**, **TypeScript**, and **React**.
-
-It helps users clean messy spreadsheets without writing formulas or using complex Excel tools.
-
-The project demonstrates:
-
-- Modern React architecture
-- TypeScript development
-- File processing
-- Automated testing with Vitest
-- Continuous Integration using GitHub Actions
-- Clean component-based design
-
----
-
-## 🚀 Features
-
-### Excel Processing
-
-- Upload Excel (.xlsx, .xls)
-- Preview spreadsheet
-- Download cleaned Excel
-
-### Cleaning Tools
-
-- Remove Duplicate Rows
-- Remove Empty Rows
-- Remove Empty Columns
-- Trim Extra Spaces
-- Find & Replace
-- Sort Data
-- Split Columns
-- Merge Columns
-- Auto Clean
-
-### Engineering
-
-- TypeScript
-- Component Architecture
-- Utility Layer
-- Unit Testing
-- GitHub Actions CI
-- Responsive UI
-
----
-
-## 🛠 Tech Stack
-
-| Technology | Usage |
-|------------|------|
-| Next.js | Frontend Framework |
-| React | UI |
-| TypeScript | Type Safety |
-| XLSX | Excel Processing |
-| Tailwind CSS | Styling |
-| Vitest | Unit Testing |
-| GitHub Actions | Continuous Integration |
-
----
-
-## 📂 Project Structure
-
-```text
-app/
-components/
-tests/
-.github/
+hooks/
+utils/
+types/
 public/
 ```
+
+---
+
+## Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/akhtar-code/cleansheet-ai.git
+```
+
+Install packages
+
+```bash
+npm install
+```
+
+Run development server
+
+```bash
+npm run dev
+```
+
+---
+
+## Current Features
+
+| Feature | Status |
+|----------|--------|
+| Upload Files | ✅ |
+| Excel Preview | ✅ |
+| Remove Empty Rows | ✅ |
+| Remove Duplicates | ✅ |
+| Remove Empty Columns | ✅ |
+| Trim Spaces | ✅ |
+| Auto Clean | ✅ |
+| Download Excel | ✅ |
+| Mobile Responsive | ✅ |
+
+---
+
+## Roadmap
+
+Upcoming improvements
+
+- Large file optimization
+- Undo history
+- Dark mode
+- AI cleaning suggestions
+- Multiple worksheet support
+- Batch processing
+
+---
+
+## License
+
+MIT License
